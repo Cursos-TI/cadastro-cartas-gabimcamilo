@@ -1,15 +1,92 @@
 #include <stdio.h>
 
-// Desafio Super Trunfo - Países
-// Tema 1 - Cadastro das cartas
-// Objetivo: No nível novato você deve criar as cartas representando as cidades utilizando scanf para entrada de dados e printf para exibir as informações.
+int main () {
 
-int main() {
-  // Área para definição das variáveis para armazenar as propriedades das cidades
+    // Declaração das variáveis para a carta 1
+    char Estado1[50], Codigo1[10], Cidade1[50];
+    int População1;
+    float Área1; 
+    float PIB1;
+    int QtdPontos1;
+   
+    // Declaração das variáveis para a carta 2
+    char Estado2[50], Codigo2[10], Cidade2[50];
+    int População2;
+    float Área2; 
+    float PIB2;
+    int QtdPontos2;
 
-  // Área para entrada de dados
+    // Entrada de dados para a carta 1
+    printf("Carta: 1\n");
+        
+    printf("Digite o Estado: \n");    
+    scanf(" %s", Estado1);
+   
+    printf("Digite o Código: \n");    
+    scanf(" %s", Codigo1);
+     
+    printf("Digite a Cidade: \n");
+    scanf(" %s", Cidade1);
+    
+    printf("Digite a População: \n");
+    scanf(" %d", &População1);
+   
+    printf("Digite a Área em km²: \n");
+    scanf(" %f", &Área1 );
+    
+    printf("Digite o PIB em bilhões de reais: \n");
+    scanf(" %f", &PIB1);
+    
+    printf("Digite qtd de pontos turísticos: \n");
+    scanf(" %d", &QtdPontos1);
+   
 
-  // Área para exibição dos dados da cidade
+    
+    // Entrada de dados para a carta 2
+    printf("Carta: 2\n");
+        
+    printf("Digite o Estado: \n");
+    scanf(" %s", Estado2);
+    
+    printf("Digite o Código: \n");
+    scanf(" %s", Codigo2);
+    
+    printf("Digite a Cidade: \n");
+    scanf(" %s", Cidade2);
+    
+    printf("Digite a População: \n");
+    scanf(" %d", &População2);
+    
+    printf("Digite a Área em km²: \n");
+    scanf(" %f", &Área2);
+    
+    printf("Digite o PIB em bilhões de reais: \n");
+    scanf(" %f", &PIB2);
+    
+    printf("Digite qtd de pontos turísticos: \n");
+    scanf(" %d", &QtdPontos2);
+    
+    // Exibição dos dados da carta 1
+    printf("\n=== Dados da Carta 1 ===\n");
+    printf("Estado: %s\n", Estado1);
+    printf("Código: %s\n", Codigo1);
+    printf("Cidade: %s\n", Cidade1);
+    printf("População: %d\n", População1);
+    printf("Área em km²: %.2f\n", Área1);
+    printf("PIB em R$ Bi: %.2f\n", PIB1);
+    printf("Número de pontos turísticos: %d\n", QtdPontos1);
 
-return 0;
-} 
+    // Exibição dos dados da carta 2
+    printf("\n=== Dados da Carta 2 ===\n");
+    printf("Estado: %s\n", Estado2);
+    printf("Código: %s\n", Codigo2);
+    printf("Cidade: %s\n", Cidade2);
+    printf("População: %d\n", População2);
+    printf("Área em km²: %.2f\n", Área2);
+    printf("PIB em R$ Bi: %.2f\n", PIB2);
+    printf("Número de pontos turísticos: %d\n", QtdPontos2);
+
+
+    
+    return 0;
+}
