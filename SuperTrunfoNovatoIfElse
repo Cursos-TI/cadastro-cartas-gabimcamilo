@@ -1,0 +1,127 @@
+#include <stdio.h>
+
+int main () {
+
+    // Declaração das variáveis para a carta 1
+    char Estado1[50], Codigo1[10], Cidade1[50];
+    unsigned long int Populacao1;
+    double Area1, PIB1, Densidade1, PIBPerCapita1, SuperPoder1; 
+    int QtdPontos1;
+
+
+    // Declaração das variáveis para a carta 2
+    char Estado2[50], Codigo2[10], Cidade2[50];
+    unsigned long int Populacao2;
+    double Area2, PIB2, Densidade2, PIBPerCapita2, SuperPoder2;
+    int QtdPontos2;
+
+
+    // Entrada de dados para a carta 1
+    printf("Carta: 1\n");
+        
+    printf("Digite o Estado: \n");    
+    scanf(" %s", Estado1);
+   
+    printf("Digite o Código: \n");    
+    scanf(" %s", Codigo1);
+     
+    printf("Digite a Cidade: \n");
+    scanf(" %49[^\n]", Cidade1);
+    
+    printf("Digite a População: \n");
+    scanf(" %lu", &Populacao1);
+   
+    printf("Digite a Área em km²: \n");
+    scanf(" %lf", &Area1 );
+    
+    printf("Digite o PIB em bilhões de reais: \n");
+    scanf(" %lf", &PIB1);
+    
+    printf("Digite qtd de pontos turísticos: \n");
+    scanf(" %d", &QtdPontos1);
+
+    
+    
+    // Entrada de dados para a carta 2
+    printf("Carta: 2\n");
+        
+    printf("Digite o Estado: \n");
+    scanf(" %s", Estado2);
+    
+    printf("Digite o Código: \n");
+    scanf(" %s", Codigo2);
+    
+    printf("Digite a Cidade: \n");
+    scanf(" %49[^\n]", Cidade2);
+    
+    printf("Digite a População: \n");
+    scanf(" %lu", &Populacao2);
+    
+    printf("Digite a Área em km²: \n");
+    scanf(" %lf", &Area2);
+    
+    printf("Digite o PIB em bilhões de reais: \n");
+    scanf(" %lf", &PIB2);
+    
+    printf("Digite qtd de pontos turísticos: \n");
+    scanf(" %d", &QtdPontos2);
+
+    
+    // Exibição dos dados da carta 1
+    printf("\n=== Dados da Carta 1 ===\n");
+    printf("Estado: %s\n", Estado1);
+    printf("Código: %s\n", Codigo1);
+    printf("Cidade: %s\n", Cidade1);
+    printf("População: %lu\n", Populacao1);
+    printf("Área: %.2lf km²\n", Area1);
+    printf("PIB: %.2lf Bilhões de reais\n", PIB1);
+    printf("Número de pontos turísticos: %d\n", QtdPontos1);
+    Densidade1 = (double)Populacao1 / Area1; ;
+    printf("Densidade demográfica: %.2lf hab/km²\n", Densidade1);
+    PIBPerCapita1 = (PIB1 * 1000000000) / Populacao1;
+    printf("PIB per capita: %.2lf R$ por habitante\n", PIBPerCapita1);
+    SuperPoder1 = (double)Populacao1 + Area1 + PIB1 + QtdPontos1 + PIBPerCapita1 + (1.0/Densidade1);
+    printf("Super Poder da Carta 1 é: %.2lf\n", SuperPoder1);
+
+    // Exibição dos dados da carta 2
+    printf("\n=== Dados da Carta 2 ===\n");
+    printf("Estado: %s\n", Estado2);
+    printf("Código: %s\n", Codigo2);
+    printf("Cidade: %s\n", Cidade2);
+    printf("População: %lu\n", Populacao2);
+    printf("Área: %.2lf km²\n", Area2);
+    printf("PIB: %.2lf Bilhões de reais\n", PIB2);
+    printf("Número de pontos turísticos: %d\n", QtdPontos2);
+    Densidade2 = (double)Populacao2 / Area2;
+    printf("Densidade demográfica: %.2lf hab/km²\n", Densidade2);
+    PIBPerCapita2 = (PIB2 * 1000000000) / Populacao2;
+    printf("PIB per capita: %.2lf R$ por habitante\n", PIBPerCapita2);
+    SuperPoder2 = (double)Populacao2 + Area2 + PIB2 + QtdPontos2 + PIBPerCapita2 + (1.0/Densidade2);
+    printf("Super Poder da Carta 2 é: %.2lf\n", SuperPoder2);
+
+    // Comparação entre todos os atributos das cartas
+    printf("\n=== Comparação entre as Cartas ===\n");
+    printf("População de %s maior que de %s: %d\n", Cidade1, Cidade2, (Populacao1 > Populacao2));
+    printf("Área de %s maior que de %s: %d\n", Cidade1, Cidade2, (Area1 > Area2));
+    printf("PIB de %s maior que de %s: %d\n", Cidade1, Cidade2, (PIB1 > PIB2));
+    printf("Número de pontos turísticos de %s maior que de %s: %d\n", Cidade1, Cidade2, (QtdPontos1 > QtdPontos2));
+    printf("Densidade demográfica inversa de %s menor que de %s: %d\n", Cidade1, Cidade2, (Densidade1 < Densidade2));
+    printf("PIB per capita de %s maior que de %s: %d\n", Cidade1, Cidade2, (PIBPerCapita1 > PIBPerCapita2));
+    printf("Super Poder de %s maior que de %s: %d\n", Cidade1, Cidade2, (SuperPoder1 > SuperPoder2));
+
+    // Determinação do vencedor com base na População com if else
+    printf("\n=== Determinação do Vencedor com base na População ===\n");
+    printf("Carta 1 - População de %s: %lu\n", Cidade1, Populacao1);
+    printf("Carta 2 - População de %s: %lu\n", Cidade2, Populacao2);
+
+    if (Populacao1 > Populacao2) {
+        printf("Vencedor é Carta 1: %s\n", Cidade1);
+    } else if (Populacao2 > Populacao1) {
+        printf("Vencedor é Carta 2: %s\n", Cidade2);
+    } else {
+        printf("Empate na População!\n");
+    }   
+
+    
+    return 0;
+}
